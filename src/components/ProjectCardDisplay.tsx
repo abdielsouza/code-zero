@@ -87,9 +87,9 @@ export default async function ProjectCardDisplay() {
             }} className="md:scale-100 scale-75">
                 <CarouselContent className='p-5'>
                 {
-                    feed.map((card) => 
+                    feed.map((card, index) => 
                         (
-                            <CarouselItem draggable='false' className="mx-5">
+                            <CarouselItem draggable='false' className="mx-5" key={index}>
                                 <ProjectCard
                                 title={card.title}
                                 publishedAt={card.publishedAt}
