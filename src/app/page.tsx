@@ -3,18 +3,9 @@
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { AvatarFallback } from '@radix-ui/react-avatar';
 import Link from 'next/link';
-import Router from 'next/router';
-import NProgress from 'nprogress';
+import Loading from './loading';
 
 export default function Home() {
-
-  Router.events.on('routeChangeStart', (url) => {
-    console.log(`Loading: ${url}`);
-    NProgress.start();
-  });
-  
-  Router.events.on('routeChangeComplete', () => NProgress.done());
-  Router.events.on('routeChangeError', () => NProgress.done());
 
   return (
     <div className="w-full h-full p-4">
@@ -31,14 +22,18 @@ export default function Home() {
         <div id="intro-text" className="mb-20">
           <p className="text-sm">
             Bem-vindo ao Code Zero! Me chamo Abdiel Souza e sou um desenvolvedor web fullstack. Eu construí esse ambiente
-            para servir como ponte de acesso aos meus projetos seja lá onde eles estiverem hospedados. Esta página ainda
-            está em estágio de desenvolvimento e futuramente receberá novas atualizações para atender um propósito maior.
+            para servir como ponte de acesso aos meus projetos seja lá onde eles estiverem hospedados. <b>Esta página ainda
+            está em estágio de desenvolvimento</b> e futuramente receberá novas atualizações para atender um propósito maior.
           </p>
         </div>
         <div id="buttons-wrapper">
-          <Link href="/projects">
+          <Link href="/projects" onClick={() => <Loading/>}>
             <span></span><span></span><span></span><span></span>
             Ver projetos
+          </Link>
+          <Link href="/aboutme" onClick={() => <Loading/>}>
+            <span></span><span></span><span></span><span></span>
+            Informações
           </Link>
         </div>
       </div>

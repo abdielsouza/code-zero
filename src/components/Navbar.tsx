@@ -4,26 +4,34 @@ import { SocialIcon } from 'react-social-icons';
 
 export const Navbar = () => {
     return (
-        <nav className="text-white p-4 sm:p-4 md:flex md:justify-between md:items-center">
+        <nav className="fixed bg-black z-10 text-white px-4 sm:px-4 md:flex md:justify-between md:items-center w-full m-0">
             <div className="container mx-auto flex justify-between items-center">
                 <h1 className="text-2xl font-bold">Code Zero</h1>
                 <div>
-                   <SocialIcon
-                   url="https://instagram.com/dev_engenharias"
-                   network="instagram"
-                   bgColor="transparent"
-                   fgColor="white"
-                   target="_blank"
-                   className="mx-2"
-                   />
-                   <SocialIcon
-                   url="https://github.com/abdielsouza"
-                   network="github"
-                   bgColor="transparent"
-                   fgColor="white"
-                   target="_blank"
-                   className="mx-2"
-                   />
+                    <SocialIcon
+                    url="https://wa.me/553193350829"
+                    network="whatsapp"
+                    bgColor="transparent"
+                    fgColor="white"
+                    target="_blank"
+                    className="mx-2"
+                    />
+                    <SocialIcon
+                    url="https://instagram.com/dev_engenharias"
+                    network="instagram"
+                    bgColor="transparent"
+                    fgColor="white"
+                    target="_blank"
+                    className="mx-2"
+                    />
+                    <SocialIcon
+                    url="https://github.com/abdielsouza"
+                    network="github"
+                    bgColor="transparent"
+                    fgColor="white"
+                    target="_blank"
+                    className="mx-2"
+                    />
                 </div>
             </div>
         </nav>
