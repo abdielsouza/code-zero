@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <div className="w-full h-full p-4">
-      <div className="relative p-4 mt-16 text-center justify-center mx-auto items-center w-1/2 max-w-fit sm:scale-75 md:scale-95 lg:scale-100">
+      <div className="relative p-4 mt-16 text-center justify-center mx-auto items-center lg:w-1/2 max-w-fit">
         <div className="relative mb-20 py-2" id="neon-title">
           <div id="title-lightbar"></div>
           <div id="title-toplayer"></div>
@@ -26,12 +26,12 @@ export default function Home() {
             está em estágio de desenvolvimento</b> e futuramente receberá novas atualizações para atender um propósito maior.
           </p>
         </div>
-        <div id="buttons-wrapper">
-          <Link href="/projects" onClick={() => <Loading/>}>
+        <div id="buttons-wrapper" className='sm:scale-75 md:scale-75 lg:scale-100 sm:block md:block lg:inline-flex max-w-full max-h-fit'>
+          <Link href="/projects" onClick={() => <Loading/>} className='sm:scale-50 md:scale-75 lg:scale-100 sm:my-3 md:my-3 lg:my-0'>
             <span></span><span></span><span></span><span></span>
-            Ver projetos
+            Projetos
           </Link>
-          <Link href="/aboutme" onClick={() => <Loading/>}>
+          <Link href="/aboutme" onClick={() => <Loading/>} className='sm:scale-50 md:scale-75 lg:scale-100 sm:my-3 md:my-3 lg:my-0'>
             <span></span><span></span><span></span><span></span>
             Informações
           </Link>

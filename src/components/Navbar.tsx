@@ -4,7 +4,7 @@ import { SocialIcon } from 'react-social-icons';
 
 export const Navbar = () => {
     return (
-        <nav className="fixed bg-black z-10 text-white sm:px-1 md:px-1 lg:px-4 sm:scale-95 md:scale-95 lg:scale-100 md:flex md:justify-between md:items-center w-full m-0">
+        <nav className="fixed bg-black z-10 text-white sm:px-1 md:px-1 lg:px-4 md:flex md:justify-between md:items-center w-full m-0 top-0">
             <div className="container mx-auto flex justify-between items-center">
                 <h1 className="text-2xl font-bold">Code Zero</h1>
                 <div>

@@ -53,10 +53,10 @@ export default async function ProjectView() {
                 data!.map((info, index) => (
                     <AccordionItem key={index.toString()} value={index.toString()}>
                         <AccordionTrigger>{info.title}</AccordionTrigger>
-                        <AccordionContent className='text-justify'>
-                            <Label className='font-normal py-3'><b>Atualização:</b> {info.last_update}</Label>
+                        <AccordionContent className='text-justify leading-5'>
+                            <Label className='font-normal my-1'><b>Atualização:</b> {info.last_update}</Label>
                             <br/>
-                            <Label className='font-normal py-3'>
+                            <Label className='font-normal my-1'>
                                 <b>Status: </b>
                                 {
                                     info.project_status == 'Em Desenvolvimento' ?
@@ -67,9 +67,20 @@ export default async function ProjectView() {
                                 }
                             </Label>
                             <br/>
-                            <Label className='font-normal py-3'><b>Link do projeto:</b> {(<a href={info.link} className='underline text-blue-400'>{info.link}</a>)}</Label>
+                            <Label className='font-normal my-1'><b>Link do projeto:</b> {(<a href={info.link} className='underline text-blue-400'>{info.link}</a>)}</Label>
                             <br/>
-                            <Label className='font-normal py-3'><b>Descrição:</b> {info.description}</Label>
+                            <Label className='font-normal my-3'>
+                                <b>Tech Stack: </b>
+                                <div className="inline-grid grid-cols-5 gap-2 py-5">
+                                    {
+                                        info.techstack.map((tech: string) => (
+                                            <Badge>{tech}</Badge>
+                                        ))
+                                    }
+                                </div>
+                            </Label>
+                            <br/>
+                            <Label className='font-normal my-1'><b>Descrição:</b> {info.description}</Label>
                         </AccordionContent>
                     </AccordionItem>
                 ))
