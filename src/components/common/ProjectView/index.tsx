@@ -73,8 +73,8 @@ export default async function ProjectView() {
                                 <b>Tech Stack: </b>
                                 <div className="inline-grid grid-cols-5 gap-2 py-5">
                                     {
-                                        info.techstack.map((tech: string) => (
-                                            <Badge>{tech}</Badge>
+                                        info.techstack.map((tech: string, index: number) => (
+                                            <Badge key={index.toString()}>{tech}</Badge>
                                         ))
                                     }
                                 </div>
