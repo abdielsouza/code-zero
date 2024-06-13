@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <div className="w-full h-full p-4">
-      <div className="relative p-4 mt-16 text-center justify-center mx-auto items-center md:w-1/2 w-[800px] max-w-fit md:scale-100 scale-75">
+      <div className="relative p-4 mt-16 text-center justify-center mx-auto items-center w-1/2 max-w-fit sm:scale-75 md:scale-95 lg:scale-100">
         <div className="relative mb-20 py-2" id="neon-title">
           <div id="title-lightbar"></div>
           <div id="title-toplayer"></div>
