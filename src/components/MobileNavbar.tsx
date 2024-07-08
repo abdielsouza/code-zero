@@ -1,5 +1,5 @@
 import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "./ui/sheet";
 import { SocialIcon } from "react-social-icons";
 import Link from "next/link";
 
@@ -15,10 +15,18 @@ export default function MobileNavbar() {
                     
                 </div>
                 <div className='flex flex-col justify-center items-center gap-y-4'>
-                    <Link href="/">Início</Link>
-                    <Link href="/news">Notícias</Link>
-                    <Link href="/services">Serviços</Link>
-                    <Link href="/contacts">Contatos</Link>
+                    <SheetClose asChild>
+                        <Link href="/">Início</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                        <Link href="/news">Notícias</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                        <Link href="/services">Serviços</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                        <Link href="/contacts">Contatos</Link>
+                    </SheetClose>
                 </div>
             </SheetContent>
         </Sheet>

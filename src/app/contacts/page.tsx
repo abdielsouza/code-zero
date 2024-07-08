@@ -86,7 +86,7 @@ export default function Contacts() {
 
                 </form>
             </div>
-            <div className="my-10">
+            <div className="my-10 mx-auto text-center">
                 <Link href="https://wa.me/553193350829" target="_blank" className="font-semibold underline glowtext-green">
                     Ou converse diretamente pelo Whatsapp clicando aqui!
                 </Link>
