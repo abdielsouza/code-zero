@@ -73,307 +73,90 @@ html {
   color: white;
 }
 
-#neon-title h1 {
+@layer base {
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-sm;
+  }
+
+  #describe-div {
+    @apply flex flex-col justify-center items-center p-2 my-5;
+  }
+
+  .default-colored-button {
+    @apply bg-red-600 border-red-600 text-white;
+  }
+
+  .default-inverted-button {
+    @apply bg-transparent border-red-600 text-red-600;
+  }
+}
+
+.neon-text {
   color: white;
   font-weight: 600;
-  text-shadow: 0 0 10px red,
-    0 0 20px red,
-    0 0 40px red,
-    0 0 80px red;
+  animation: neon-title-animation 2s ease-in-out infinite alternate;
 }
 
-#title-lightbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 100%;
-  border-radius: 10px;
-  background-color: white;
-  z-index: 2;
-  box-shadow: 0 0 10px red,
-    0 0 20px red,
-    0 0 40px red,
-    0 0 80px red;
-  animation: animatelightbar 5s linear forwards;
-}
-
-@keyframes animatelightbar {
-  0%, 5% {
-    transform: scaleY(0) translateX(0);
-  }
-  10% {
-    transform: scaleY(1) translateX(0);
-  }
-  90% {
-    transform: scaleY(1) translateX(42vw);
-  }
-  95%, 100% {
-    transform: scaleY(0) translateX(42vw);
-  }
-}
-
-#title-toplayer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  box-shadow: 0 0 30px 20px black, 0 0 30px 10px black;
-  animation: animatetoplayer 10s linear forwards;
-}
-
-@keyframes animatetoplayer {
-  0%, 2.5% {
-    transform: translateX(0);
-  }
-  5% {
-    transform: translateX(0);
-  }
-  45% {
-    transform: translateX(42vw);
-  }
-  47.5%, 100% {
-    transform: translateX(42vw);
-  }
-  100% {
-    display: none;
-  }
-}
-
-/* MEDIA QUERY FOR TITLE ANIMATION */
-
-@media (max-width: 768px) {
-  @keyframes animatelightbar {
-    0%, 5% {
-      transform: scaleY(0) translateX(0);
-    }
-    10% {
-      transform: scaleY(1) translateX(0);
-    }
-    90% {
-      transform: scaleY(1) translateX(90vw);
-    }
-    95%, 100% {
-      transform: scaleY(0) translateX(90vw);
-    }
-  }
-
-  #title-lightbar {
-    animation: animatelightbar 5s linear forwards;
-  }
-
-  @keyframes animatetoplayer {
-    0%, 2.5% {
-      transform: translateX(0);
-    }
-    5% {
-      transform: translateX(0);
-    }
-    45% {
-      transform: translateX(90vw);
-    }
-    47.5%, 100% {
-      transform: translateX(90vw);
-    }
-    100% {
-      display: none;
-    }
-  }
-
-  #title-toplayer {
-    animation: animatetoplayer 10s linear forwards;
-  }
-}
-
-#buttons-wrapper {
-  justify-content: center;
-  align-items: center;
-}
-
-#buttons-wrapper a {
-  position: relative;
-  display: inline-block;
-  padding: 15px 20px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #ef6666;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: .5s;
-  overflow: hidden;
-  margin-right: 20px;
-  margin-left: 20px;
-  text-shadow: 0 0 10px red, 0 0 5px #ff1515;
-}
-
-#buttons-wrapper a:hover {
-  background-color: #ef1111;
-  color: whitesmoke;
-  box-shadow: 0 0 10px red,
-    0 0 10px red,
-    0 0 15px red,
-    0 0 15px red;
-  text-shadow: none;
-}
-
-#buttons-wrapper a > span {
-  position: absolute;
-  display: block;
-}
-
-#buttons-wrapper a > span:nth-child(1) {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, red);
-  animation: animate1 2s infinite;
-}
-
-@keyframes animate1 {
+@keyframes neon-title-animation {
   0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-#buttons-wrapper a > span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, red);
-  animation: animate2 2s infinite;
-  animation-delay: .25s;
-}
-
-@keyframes animate2 {
-  0% {
-    top: -100%;
-  }
-  100% {
-    top: 100%;
-  }
-}
-
-#buttons-wrapper a > span:nth-child(3) {
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(270deg, transparent, red);
-  animation: animate3 2s infinite;
-  animation-delay: .5s;
-}
-
-@keyframes animate3 {
-  0% {
-    right: -100%;
-  }
-  100% {
-    right: 100%;
-  }
-}
-
-#buttons-wrapper a > span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(270deg, transparent, red);
-  animation: animate4 2s infinite;
-  animation-delay: .75s;
-}
-
-@keyframes animate4 {
-  0% {
-    bottom: -100%;
-  }
-  100% {
-    bottom: 100%;
-  }
-}
-
-#spotlight {
-  width: 20px;
-  height: 20px;
-  border-radius: 20px;
-  background-color: #ffdddc;
-  box-shadow: 0 0 8px 10px #ff2222,
-    0 0 5px 20px #ff1111,
-    0 0 5px 20px #ff0505,
-    0 0 100px 20px #ff0000;
-}
-
-.default-glow-button {
-  padding: 15px 20px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  color: #ef6666;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: .5s;
-  overflow: hidden;
-  margin-right: 20px;
-  margin-left: 20px;
-  text-shadow: 0 0 10px red, 0 0 5px #ff1515;
-  border-color: #d10505;
-  border-radius: 10px;
-  animation: glowbutton 1s ease-in-out infinite alternate;
-}
-
-@keyframes glowbutton {
-  from {
-    box-shadow: 0 0 5px 2px #ee0505, 0 0 10px 5px #be1515;
-  }
-  to {
-    box-shadow: 0 0 10px 5px #ee0505, 0 0 5px 2px #be1515;
-  }
-}
-
-.glowbox {
-  box-shadow: 0 0 10px red,
-    0 0 10px red,
-    0 0 20px red,
-    0 0 20px red;
-    animation: glowbox 1s ease-in-out infinite alternate;
-}
-
-@keyframes glowbox {
-  from {
-    box-shadow: 0 0 20px red,
-      0 0 20px red,
-      0 0 20px red,
-      0 0 20px red;
-  }
-  to {
-    box-shadow: 0 0 10px red,
+    text-shadow: 0 0 8px red,
+      0 0 9px red,
       0 0 10px red,
+      0 0 12px red;
+  }
+  100% {
+    text-shadow: 0 0 10px red,
       0 0 20px red,
-      0 0 20px red;
+      0 0 40px red,
+      0 0 80px red;
   }
 }
 
-.typewriter {
-  text-transform: none !important;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: .15em solid white;
-  margin: 0;
-  letter-spacing: .15 em;
-  animation: typing 10s steps(90, end), blink-caret .75s step-end infinite;
+.brightbox {
+  box-shadow: none;
+  text-shadow: none;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+.brightbox:hover {
+  box-shadow: 0 0 2px red,
+      0 0 4px red,
+      0 0 8px red,
+      0 0 12px red;
+
+  text-shadow: 0 0 2px red,
+      0 0 4px red,
+      0 0 8px red;
 }
 
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: white; }
+.red-energize {
+  background: url('../../public/redEnergize.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.glowtext-green {
+  animation: glowtextGreen 1s linear infinite alternate;
+}
+
+@keyframes glowtextGreen {
+  0% {
+    text-shadow: 0 0 2px #0aee0a, 0 0 3px #0aee0a;
+  }
+  100% {
+    text-shadow: 0 0 5px #0aee0a, 0 0 8px #0aee0a;
+  }
 }

@@ -1,0 +1,36 @@
+.glowcard-red, .glowcard-yellow, .glowcard-green, .glowcard-blue {
+    transition-duration: 0.095s;
+    transition-timing-function: ease-in-out;
+}
+
+.glowcard-red:hover {
+    box-shadow: 0 0 5px red,
+        0 0 8px red;
+
+    text-shadow: 0 0 3px red,
+        0 0 3px red;
+}
+
+.glowcard-yellow:hover {
+    box-shadow: 0 0 5px yellow,
+        0 0 8px yellow;
+
+    text-shadow: 0 0 3px yellow,
+        0 0 3px yellow;
+}
+
+.glowcard-green:hover {
+    box-shadow: 0 0 5px rgb(70, 227, 12),
+        0 0 8px rgb(70, 227, 12);
+
+    text-shadow: 0 0 3px rgb(70, 227, 12),
+        0 0 3px rgb(70, 227, 12);
+}
+
+.glowcard-blue:hover {
+    box-shadow: 0 0 5px deepskyblue,
+        0 0 8px deepskyblue;
+
+    text-shadow: 0 0 3px deepskyblue,
+        0 0 3px deepskyblue;
+}

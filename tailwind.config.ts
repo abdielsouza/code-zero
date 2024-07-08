@@ -73,6 +73,24 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    dropShadow: {
+      'glowing-green': [
+        '0 0 5px #0aee0a',
+        '0 0 3px #0acd0a'
+      ],
+      'glowing-pink-mix': [
+        '0 0 5px #e519d5ff',
+        '0 0 3px #f6fc12aa'
+      ],
+      'glowing-ghost-blue': [
+        '0 0 5px #55b4fded',
+        '0 0 3px #a1d5fcba'
+      ],
+      'glowing-clean-blue': [
+        '0 0 5px #0c68faff',
+        '0 0 3px #0c68faac'
+      ]
+    }
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config

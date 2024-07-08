@@ -1,10 +1,12 @@
 import type { GetStaticProps, Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Raleway } from "next/font/google";
 import "./globals.css";
 
 import { Navbar } from "@/components/Navbar";
+import PageTransition from "@/components/PageTransition";
+import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({ subsets: ["latin"] });
+const raleway = Raleway({style: "normal", subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Code Zero",
@@ -12,15 +14,20 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar/>
-        {children}
+      <body className={raleway.className}>
+        <div className="flex flex-col w-full h-full z-40">
+          <Navbar/>
+          <PageTransition>
+            {children}
+          </PageTransition>
+          <Toaster/>
+        </div>
       </body>
     </html>
   );
