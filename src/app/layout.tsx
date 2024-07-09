@@ -5,6 +5,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import PageTransition from "@/components/PageTransition";
 import { Toaster } from "@/components/ui/toaster";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const raleway = Raleway({style: "normal", subsets: ["latin"]});
 
@@ -29,6 +30,7 @@ export default function RootLayout({
           <Toaster/>
         </div>
       </body>
+      <GoogleAnalytics gaId="G-HM9PE6NPEH"/>
     </html>
   );
 }
