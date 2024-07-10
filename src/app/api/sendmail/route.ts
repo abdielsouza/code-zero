@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
         const mailOptions: Mail.Options = {
             from: process.env.EMAIL_ADDRESS!,
-            to: process.env.EMAIL_ADDRESS!,
+            to: process.env.INTERFACE_EMAIL_ADDRESS!,
             cc: params.email,
             subject: "Nova demanda para CodeZero!",
             text: `Cliente: ${params.fullname}\nEmail: ${params.email}\nDescrição do pedido:\n\n ${params.request}`

@@ -11,7 +11,10 @@ export const Navbar = () => {
             <div className="container mx-auto flex justify-between items-center">
                 <div className='inline-flex items-center gap-2'>
                     <Image src="/czLogo.png" quality={100} alt="" width={64} height={64}/>
-                    <h1 className="text-2xl font-bold">Code Zero</h1>
+                    <div className="flex flex-col max-w-fit">
+                        <h1 className="text-2xl font-bold">Code Zero</h1>
+                        <h2 className='text-sm'>codezero.service@gmail.com</h2>
+                    </div>
                 </div>
                 <Tabs className='hidden lg:block'>
                     <Tab key="home" title="Início" href="/"/>
