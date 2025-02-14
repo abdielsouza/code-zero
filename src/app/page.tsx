@@ -82,7 +82,25 @@ export default function Home() {
               </p>
           </motion.div>
 
-          
+          <div className="my-20">
+            <h2 className="text-center font-bold">Nossas inspirações</h2>
+            <Carousel className="w-[300px] h-[200px] lg:w-[500px] lg:h-[400px] mt-10">
+              <CarouselContent>
+                {
+                  inspirations.map((inspiration, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-4 mx-auto">
+                        <Image src={inspiration.imgPath} alt="Error on loading" quality={100} width={300} height={200} className="w-full h-full"/>
+                        <Link href={inspiration.link} target='_blank'>{inspiration.link}</Link>
+                      </div>
+                    </CarouselItem>
+                  ))
+                }
+              </CarouselContent>
+              <CarouselPrevious className='hidden lg:block'/>
+              <CarouselNext className='hidden lg:block'/>
+            </Carousel>
+          </div>
 
           <div className='mb-20'>
             <h2 className="text-center font-bold">Modelos recentes</h2>
