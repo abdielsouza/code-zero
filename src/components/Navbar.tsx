@@ -17,7 +17,7 @@ export const Navbar = () => {
                     </div>
                 </div>
                 <Tabs className='hidden lg:block'>
-                    <Tab key="home" title="Início" href="/"/>
+                    <Tab key="home" title="Início" href="/" className="bg-transparent" />
                     <Tab key="news" title="Notícias" href="/news"/>
                     <Tab key="services" title="Serviços" href="/services"/>
                     <Tab key="contact" title="Contatos" href="/contacts"/>
